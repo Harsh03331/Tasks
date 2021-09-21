@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.main{
+    width: 100%;
+    min-height: 100vh;
+    background: skyblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login-form{
+    background: white;
+    width: 900px;
+    font-weight: 600;
+    position: relative;
+    display: flex;
+}
+.login-form .image{
+    margin-bottom: 6px;
+}
+.login-form .image img{
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    height:100%;
+}
+.login-form .form-detail{
+    padding: 10px 40px;
+    position: relative;
+    width: 100%;
+}
+.login-form .form-detail h2{
+    text-align: left;
+    font-size: 30px;
+    padding: 6px 0 0;
+    position: relative;
+    margin-bottom: 40px;
+}
+.login-form .form-detail .iput-box{
+    width: 100%;
+}
+.login-form .form-detail .btn-box{
+    text-align: center;
+    margin-top: 20px;
+}
+.login-form .form-detail .input-txt{
+    margin-bottom: 30px;
+}
+.login-form .form-detail input{
+    width: 92%;
+    padding: 0 15px 10px 15px;
+    border: 2px solid transparent;
+    border-bottom: 2px solid #e5e5e5;
+    outline: none;
+    font-size: 14px;
+    font-weight: 500;
+}
+.login-form .form-detail input:focus{
+    border-bottom: 2px solid rgba(0, 89, 255, 0.671);
+}
+.login-form .form-detail .log{
+    background: #004680;
+    border-radius: 6px;
+    width: 160px;
+    padding: 7px;
+    border: none;
+    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.15);
+    margin-top: 10px;
+    font-weight: 700;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+}
+.login-form .form-detail .log:hover{
+    background: rgb(15, 138, 15);
+}
+.login-form .form-detail .text{
+    margin-top: 5px;
+    font-size: 14px;
+    font-weight: 400;   
+}
+.login-form .form-detail .text1{
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: 400;
+}
+.login-form .form-detail .text1 label{
+    cursor: pointer;
+}
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+a:hover{
+    text-decoration: underline;
+}
+.social{
+    text-align: center;
+    margin-top: 30px;
+    border: none;
+    cursor: pointer;
+}
+
+
+@media (max-width: 820px)
+{
+    .login-form{
+        margin: 100px 20px;
+        flex-direction: column;
+    }
+    .login-form .image img{
+        display: none;
+    }
+    .login-form .form-detail{
+        width: auto;
+        padding: 10px 10px 30px 20px;
+    }
+    .login-form .form-detail .log{
+        margin-bottom: 50px;
+    }
+}

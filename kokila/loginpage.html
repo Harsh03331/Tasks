@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="login.css">
+        <link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet'>
+        <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    </head>
+    <body>
+        <div class="main">
+            <div class="login-form">
+                <form name="form"class= "form-detail" action='side.html' onsubmit="return validate()" method="POST">
+                    <h2>Login</h2>
+                
+                    <div class="input-box">
+                        <span class="material-icons">email</span>
+                        <input type="text" class ="input-txt" placeholder="Enter your email" required>
+                    </div>
+                    
+                    <div class="input-box">
+                        <span class="material-icons">lock</span>
+                        <input type="password" class ="input-txt" placeholder="Enter your password" name="password"required>
+                    </div>
+
+                    <div class="text"> <a href="#">forgot password?</a></div>
+
+                    <div class="btn-box">
+                        <input type="submit" class="log" value="Login">
+                    </div>
+                   
+                    <div class="social">
+                        <a href="https://www.facebook.com/"><i class='bx bxl-facebook bx-sm' ></i></a>&nbsp;&nbsp;
+                        <a href="https://accounts.google.com/"><i class='bx bxl-google bx-sm'></i></a>&nbsp;&nbsp;
+                        <a href="https://account.microsoft.com/"><i class='bx bxl-microsoft bx-sm'></i></a>&nbsp;&nbsp;
+                        <a href="https://www.apple.com/in/"><i class='bx bxl-apple bx-sm'></i></a>
+                    </div>
+                    
+                    <div class="text1">Don't have an account? <a href="register.html"><label for="">Signup now</label></a></div>
+                </form>
+                <div class="image">
+                    <img src="mm.jpg">
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
