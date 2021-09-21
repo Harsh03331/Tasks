@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.main{
+    width: 100%;
+    min-height: 100vh;
+    background: skyblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.reg-form{
+    background: white;
+    width: 900px;
+    font-weight: 600;
+    position: relative;
+    display: flex;
+}
+.reg-form .image{
+    margin-bottom: 6px;
+}
+.reg-form .image img{
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    height:100%;
+}
+.reg-form .form-detail{
+    padding: 10px 40px;
+    position: relative;
+    width: 100%;
+}
+.reg-form .form-detail h2{
+    text-align: left;
+    font-size: 30px;
+    padding: 6px 0 0;
+    position: relative;
+    margin-bottom: 30px;
+}
+.reg-form .form-detail .iput-box{
+    width: 100%;
+}
+.reg-form .form-detail .btn-box{
+    text-align: center;
+}
+.reg-form .form-detail .input-txt{
+    margin-bottom: 30px;
+}
+.reg-form .form-detail input{
+    width: 92%;
+    padding: 0 15px 10px 15px;
+    border: 2px solid transparent;
+    border-bottom: 2px solid #e5e5e5;
+    outline: none;
+    font-size: 14px;
+    font-weight: 500;
+}
+.reg-form .form-detail input:focus{
+    border-bottom: 2px solid rgba(0, 89, 255, 0.671);
+}
+.reg-form .form-detail .reg{
+    background: #004680;
+    border-radius: 6px;
+    width: 160px;
+    padding: 10px;
+    border: none;
+    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.15);
+    margin: 10px 0 20px 0;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    color: white;
+}
+.reg-form .form-detail .reg:hover{
+    background: rgb(15, 138, 15);
+}
+.reg-form .form-detail .text1{
+    margin-top: 30px;
+    font-size: 14px;
+    font-weight: 300;
+    font-family: 'Poppins', sans-serif;
+}
+.login-form .form-detail .text label{
+    cursor: pointer;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
+
+@media (max-width: 885px)
+{
+    .reg-form{
+        margin: 100px 20px;
+        flex-direction: column;
+    }
+    .reg-form .image img{
+        display: none;
+    }
+    .reg-form .form-detail{
+        width: auto;
+        padding: 10px 10px 30px 20px;
+    }
+    .reg-form .form-detail .reg{
+        margin-bottom: 50px;
+    }
+}
