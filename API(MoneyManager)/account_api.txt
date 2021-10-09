@@ -1,0 +1,93 @@
+var express = require('express')
+var app = express()
+var path = require('path')
+app.use(express.urlencoded({ extended: true }))
+app.use(express.json());    
+const {MongoClient,ObjectId} = require('mongodb');
+var url = "mongodb://localhost:27017/mydb";
+
+//view wallet
+app.get("/wallet",function(req,res){
+    MongoClient.connect(url,function(err,conn){
+        var db = conn.db("moneymanager")
+        db.collection("wallet_account").find().toArray(function(err,data){
+            res.send(data)
+        })
+    })
+})
+// view particular wallet
+app.get('/wallet_parti_view/:id',(req,res)=>{
+    MongoClient.connect(url,(err,conn)=>{
+        var dbo=conn.db('moneymanager')
+        dbo.collection('wallet_account').findOne({_id:ObjectId(req.params.id)},(err,data)=>{
+            res.send(data)
+        })
+    })
+})
+//insert wallet
+app.post("/wallet_insert",function(req,res){
+    MongoClient.connect(url,function(err,con){
+        var db =con.db("moneymanager");
+        db.collection("wallet_account").insertOne(req.body,function(err,data){
+            res.send(data);
+        })
+    })
+})
+//update wallet
+app.post("/wallet_update",function(req,res){
+    MongoClient.connect(url,function(err,conn){
+        var db = conn.db("moneymanager");
+        db.collection("wallet_account")
+        .updateOne(
+            {_id:ObjectId(req.body._id)},
+            {
+                $set:{
+                        name:req.body.name,
+                        amount:req.body.amount,
+                        modified_date:req.body.modified_date
+                    }
+            },
+            function(err,data){
+                console.log(data)
+            }
+        )
+    })
+})
+//delete wallet
+app.get("/wallet_delete/:id",function(req,res){
+    MongoClient.connect(url,function(err,conn){
+        var db = conn.db("moneymanager")
+        db.collection("wallet_account").deleteOne({_id:ObjectId(req.params.id)},function(err,data){
+            res.send(data)
+        })
+    })
+
+})
+//view bank account
+app.get("/bank",function(req,res){
+    MongoClient.connect(url,function(err,conn){
+        var db = conn.db("moneymanager")
+        db.collection("bank_account").find().toArray(function(err,data){
+            res.send(data)
+        })
+    })
+})
+// view particular bank
+app.get('/bank_parti_view/:id',(req,res)=>{
+    MongoClient.connect(url,(err,conn)=>{
+        var dbo=conn.db('moneymanager')
+        dbo.collection('bank_account').findOne({_id:ObjectId(req.params.id)},(err,data)=>{
+            res.send(data)
+        })
+    })
+})
+//insert bank account
+app.post("/bank_insert",function(req,res){
+    MongoClient.connect(url,function(err,con){
+        var db =con.db("moneymanager");
+        db.collection("bank_account").insertOne(req.body,function(err,data){
+            res.send(data);
+        })
+    })
+})
+app.listen(8080,function(){console.log("started 8080")})
